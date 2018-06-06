@@ -32,6 +32,7 @@ try {
         	'chat_id' => $update->message->chat->id,
         	'text' => "Ese Joni como mola se merece una oola"
      	]);
+		http_response_code(200);
     }
     else if($update->message->text == '/rickroll')
     {
@@ -42,6 +43,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/belen') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -50,6 +52,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casuaaaaal"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/tomberi') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -58,6 +61,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/pablo') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -66,6 +70,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/picky') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -74,6 +79,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Picky dimision!!!!!"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/xavi') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -82,6 +88,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Estas tardando en confirmar nidos"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/yfoms') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -90,6 +97,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Viva er Beti manque pierda!"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/paola') {
 			http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -98,6 +106,7 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Casual"
     		]);
+			http_response_code(200);
     }else if($update->message->text == '/location') {
 			
     	$response = $client->sendLocation([
@@ -105,12 +114,14 @@ try {
 			'latitude' => 43.03434,
 			'longitude' => -5.03234
      			]);
+				http_response_code(200);
     }else if($update->message->text == '/recompensas') {
 			http_response_code(200);
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
+				http_response_code(200);
     }
 	
 	
@@ -204,6 +215,7 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
     		]);
+			http_response_code(200);
  die();
  }
  
@@ -387,6 +399,7 @@ $conn->set_charset("utf8");
     		'chat_id' => $update->message->chat->id,
     		'text' => ERROR
     		]);
+			http_response_code(200);
  die();
  }
  $query = "DELETE FROM misionoviedo;";
