@@ -23,9 +23,9 @@ $update = json_decode(file_get_contents('php://input'));
  
 //your app
 try {
-	http_response_code(200);
+	//http_response_code(200);
     if($update->message->text == '/joni')
-    {http_response_code(200);
+    {//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -36,7 +36,7 @@ try {
     }
     else if($update->message->text == '/rickroll')
     {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -45,7 +45,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/belen') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -54,7 +54,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/tomberi') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -63,7 +63,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/pablo') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -72,7 +72,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/picky') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -81,7 +81,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/xavi') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -90,7 +90,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/yfoms') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -99,7 +99,7 @@ try {
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/paola') {
-			http_response_code(200);
+			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
@@ -116,7 +116,7 @@ try {
      			]);
 				http_response_code(200);
     }else if($update->message->text == '/recompensas') {
-			http_response_code(200);
+			//http_response_code(200);
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
@@ -134,7 +134,7 @@ try {
 	
 	else if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
-		http_response_code(200);
+		//http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -260,7 +260,7 @@ if (empty($row['Latitude'])) {
 	
 	else if(!is_null($update->message->reply_to_message->message_id))
     {
-		http_response_code(200);
+		//http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -321,7 +321,8 @@ $conn->set_charset("utf8");
 	//AÑADIR MISION
 	
 	else if(substr($update->message->text, 0, 10) === "/confirmar")
-    {http_response_code(200);
+    {
+		//http_response_code(200);
 		
 		
 		 //connecting to database and getting the connection object
@@ -379,7 +380,7 @@ $conn->set_charset("utf8");
 	
 	else if(substr($update->message->text, 0, 15) === "/borrartodotodo")
     {
-		http_response_code(200);
+		//http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
@@ -413,9 +414,12 @@ $conn->set_charset("utf8");
     		]);
 	}
 	
+	
+	
+	
 		else if(substr($update->message->text, 0, 10) === "/delmision")
     {
-		http_response_code(200);
+		//http_response_code(200);
 		
 		 //connecting to database and getting the connection object
 //database constants
