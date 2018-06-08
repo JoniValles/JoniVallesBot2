@@ -511,9 +511,9 @@ $conn->set_charset("utf8");
     echo $e->getMessage();
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-    	$response = $client->sendMessage([
+    	/*$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
     		'text' => $e
-    		]);
+    		]);*/
 			http_response_code(200);
 }
