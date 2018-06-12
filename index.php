@@ -129,7 +129,7 @@ try {
 			$randIndex = array_rand($array);
     	$response = $client->sendText([
         		'chat_id' => $update->message->chat->id,
-				'text' => $array[$randIndex]
+				'text' => "asdas"
      			]);
 				http_response_code(200);
     }
