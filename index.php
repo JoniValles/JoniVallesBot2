@@ -62,13 +62,14 @@ try {
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
 			http_response_code(200);
-    }else if($update->message->text == '/dimi') {
+    }else if($update->message->text == '/dimision') {
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
+$array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi dimision y mas nidos!!","Xavi dimision y mas nidos!!","Xavi dimision y mas nidos!!", "Tauro admin!!","Tauro admin!!","Tauro admin!!", "Paola casual");
+			$randIndex = array_rand($array);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "a"
+    		'text' => $array[$randIndex]
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/picky') {
