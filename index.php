@@ -125,9 +125,9 @@ try {
     }else if($update->message->text == '/dimision') {
 			//http_response_code(200);
 			
-			$array = array('Picky dimision!!','Picky dimision!!','Picky dimision!!', 'Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!', 'Tauro admin!!','Tauro admin!!','Tauro admin!!', 'Paola casual');
+			$array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi dimision y mas nidos!!","Xavi dimision y mas nidos!!","Xavi dimision y mas nidos!!", "Tauro admin!!","Tauro admin!!","Tauro admin!!", "Paola casual");
 			$randIndex = array_rand($array);
-    	$response = $client->sendText([
+			$response = $client->sendText([
         		'chat_id' => $update->message->chat->id,
 				'text' => "asdas"
      			]);
