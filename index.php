@@ -62,13 +62,13 @@ try {
     		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
 			http_response_code(200);
-    }else if($update->message->text == '/pablo') {
+    }else if($update->message->text == '/dimi') {
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Vamos Pablo sal a bailar que tu lo haces fenomenal tu cuerpo se mueve como una palmera suave, suave, su, su, suave"
+    		'text' => "a"
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/picky') {
