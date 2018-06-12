@@ -126,7 +126,7 @@ try {
 			//http_response_code(200);
 			
 			$array = array('Picky dimision!!','Picky dimision!!','Picky dimision!!', 'Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!', 'Tauro admin!!','Tauro admin!!','Tauro admin!!', 'Paola casual',);
-			$new = $items[array_rand($items)];
+			$new = $array[array_rand($array)];
     	$response = $client->sendText([
         		'chat_id' => $update->message->chat->id,
 				'text' => $new[0]
