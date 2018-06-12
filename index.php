@@ -122,6 +122,16 @@ try {
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
 				http_response_code(200);
+    }else if($update->message->text == '/dimision') {
+			//http_response_code(200);
+			
+			$array = array('Picky dimision!!','Picky dimision!!','Picky dimision!!', 'Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!','Xavi dimision y mas nidos!!', 'Tauro admin!!','Tauro admin!!','Tauro admin!!', 'Paola casual',);
+			$new = $items[array_rand($items)];
+    	$response = $client->sendText([
+        		'chat_id' => $update->message->chat->id,
+			'text' => $new
+     			]);
+				http_response_code(200);
     }
 	
 	
