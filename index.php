@@ -520,7 +520,7 @@ $conn->set_charset("utf8");
 	
 	####NIDOS####
 	
-	else if(substr($update->message->text, 0, 14) === "/confirmarnido")
+	else if(substr($update->message->text, 0, 11) === "/añadirnido")
     {
 		//http_response_code(200);
 		
