@@ -57,9 +57,9 @@ try {
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-    	$response = $client->sendMessage([
+    	$response = $client->sendVideo([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
+    		'video' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/dimision') {
