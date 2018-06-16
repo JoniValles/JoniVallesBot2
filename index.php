@@ -612,9 +612,9 @@ http_response_code(200);
  
 while ($row = mysqli_fetch_array($result)) {
 		if (empty($row['Latitude'])) {
-			$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n";
+			$data = $data . "<b>ID:</b> " .$row['id']." - <b>Pokemon:</b> " . $row['Pokemon'] . " -<b> Lugar:</b> ". $row['Lugar']."\n";
 		}else{
-		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
+		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Pokemon:</b> " . $row['Pokemon'] . " -<b> Lugar:</b> ". $row['Lugar'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
     	}
     }
  }
