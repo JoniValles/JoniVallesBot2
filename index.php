@@ -511,6 +511,125 @@ $conn->set_charset("utf8");
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	####NIDOS####
+	
+	else if(substr($update->message->text, 0, 14) === "/confirmarnido")
+    {
+		//http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ 
+ $query = "insert into nido (Pokemon, Lugar) values ('$trainer[1]','$finalData')";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Nido confirmado!"
+    		]);
+			 http_response_code(200);
+	}
+	
+	
+	
+	else if(substr($update->message->text, 0, 6) === "/nidos")
+    {
+		//http_response_code(200);
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from nido;";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $data = "";
+ 
+if (mysqli_num_rows($result)==0) { 
+$data = "Todavia no se han añadido nidos";
+http_response_code(200);
+ }else{
+	 
+ 
+while ($row = mysqli_fetch_array($result)) {
+		if (empty($row['Latitude'])) {
+			$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada']."\n";
+		}else{
+		$data = $data . "<b>ID:</b> " .$row['id']." - <b>Recompensa:</b> " . $row['Recompensa'] . " -<b> Pokeparada:</b> ". $row['Pokeparada'] ." - "."https://www.google.com/maps/?q=".$row['Latitude'].",".$row['Longitude'] ."\n";
+    	}
+    }
+ }
+	
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
+    		'text' => $data
+    		]);
+			 http_response_code(200);
+	}
+	
+	
 		
 
    else{
