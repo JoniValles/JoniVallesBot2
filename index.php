@@ -665,7 +665,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Borradas todas las misiones!"
+    		'text' => "Borrados todos los nidos!"
     		]);
 	}
 	
@@ -707,7 +707,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Mision borrada!"
+    		'text' => "Nido borrado!"
     		]);
 			 http_response_code(200);
 	}
