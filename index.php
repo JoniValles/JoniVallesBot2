@@ -123,13 +123,6 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
      			]);
 				http_response_code(200);
-    }else if($update->message->text == '/jonidimision') {
-			//http_response_code(200);
-    	$response = $client->sendPhoto([
-        		'chat_id' => $update->message->chat->id,
-			'photo' => 'https://media0.giphy.com/media/l0MYSSCIrv8aUaBsQ/giphy.gif'
-     			]);
-				http_response_code(200);
     }else if($update->message->text == '/dimision') {
 			//http_response_code(200);
 			
