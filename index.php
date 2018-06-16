@@ -57,9 +57,9 @@ try {
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-    	$response = $client->sendMessage([
+    	$response = $client->sendDocument([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
+    		'document' => "https://media.giphy.com/media/l49K0DUalMrMwE9qg/giphy.gif"
     		]);
 			http_response_code(200);
     }else if($update->message->text == '/dimision') {
@@ -121,6 +121,13 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
     	$response = $client->sendPhoto([
         		'chat_id' => $update->message->chat->id,
 			'photo' => 'https://i.imgur.com/Jo1U31G.jpg'
+     			]);
+				http_response_code(200);
+    }else if($update->message->text == '/jonidimision') {
+			//http_response_code(200);
+    	$response = $client->sendDocument([
+        		'chat_id' => $update->message->chat->id,
+			'document' => 'https://media0.giphy.com/media/l0MYSSCIrv8aUaBsQ/giphy.gif'
      			]);
 				http_response_code(200);
     }else if($update->message->text == '/dimision') {
