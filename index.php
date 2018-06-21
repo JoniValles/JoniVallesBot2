@@ -813,10 +813,9 @@ $conn->set_charset("utf8");
  $data = $trainer;
  unset($data[0]);
  unset($data[1]);
-  unset($data[2]);
  $finalData = implode(" ", $data);
  
- $query = "insert into amigo (Nombre,Nivel,Codigo) values ('$trainer[1]','$trainer[2]','$finalData')";
+ $query = "insert into amigo (Nombre,Codigo) values ('$trainer[1]','$finalData')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -872,7 +871,7 @@ http_response_code(200);
 	 
  
 while ($row = mysqli_fetch_array($result)) {
-			$data = $data . $row['Nombre']." - " . $row['Nivel'] . " - `". $row['Codigo']."`"."\n";
+			$data = $data . $row['Nombre']." - `". $row['Codigo']."`"."\n";
 
     }
  }
