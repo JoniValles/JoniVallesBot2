@@ -813,6 +813,7 @@ $conn->set_charset("utf8");
  $data = $trainer;
  unset($data[0]);
  unset($data[1]);
+  unset($data[2]);
  $finalData = implode(" ", $data);
  
  $query = "insert into amigo (Nombre,Nivel,Codigo) values ('$trainer[1]','$trainer[2]','$finalData')";
