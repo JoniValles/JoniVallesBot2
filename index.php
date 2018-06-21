@@ -823,7 +823,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Codigo de amgigo confirmado!"
+    		'text' => "Codigo de amigo confirmado!"
     		]);
 			 http_response_code(200);
 	}
