@@ -898,7 +898,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	#####GIJON#####
 	
-	else if($update->message->chat->id == @PokemonGOGijon){
+	else if($update->message->chat->id == @Toyosse){
 		if(substr($update->message->text, 0, 9) === "/addamigo")
     {
 		//http_response_code(200);
