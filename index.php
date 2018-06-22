@@ -147,7 +147,7 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 	
 	
 	
-	else if($update->message->chat->id === -1001306418717){
+	else if($update->message->chat->id === -1001129038952){
 	
 	
 	if(substr($update->message->text, 0, 9 ) === "/misiones")
