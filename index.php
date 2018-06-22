@@ -1023,7 +1023,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	#####AVILES#####
 	
-	else if($update->message->chat->id === -278343203){
+	else if($update->message->chat->id === -1001357891209){
 		
 		
 		if(substr($update->message->text, 0, 9) === "/addamigo")
