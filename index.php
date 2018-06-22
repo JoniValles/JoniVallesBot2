@@ -147,10 +147,10 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 	
 	
 	
-	//if($update->message->chat->id === -1001129038952){
+	else if($update->message->chat->id === -1001306418717){
 	
 	
-	else if(substr($update->message->text, 0, 9 ) === "/misiones")
+	if(substr($update->message->text, 0, 9 ) === "/misiones")
     {
 		//http_response_code(200);
 		
@@ -889,7 +889,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-//}
+}
 	
 	
 	
