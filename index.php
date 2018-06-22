@@ -898,7 +898,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	#####GIJON#####
 	
-	if($update->message->chat->id === ){
+	if($update->message->chat->id === -1001063849412){
 		if(substr($update->message->text, 0, 9) === "/addamigo")
     {
 		//http_response_code(200);
