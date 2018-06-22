@@ -898,7 +898,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	#####GIJON#####
 	
-	else if($update->message->chat->id === -1001306418717){
+	else if($update->message->chat->id === -1001063849412){
 		
 		
 		if(substr($update->message->text, 0, 9) === "/addamigo")
@@ -1007,6 +1007,20 @@ while ($row = mysqli_fetch_array($result)) {
 			 http_response_code(200);
 	}
 	}
+	
+	
+	
+	
+	/*
+	else if($update->message->new_chat_member != null){
+		$nombre = $update->message->new_chat_member->first_name
+		$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'Markdown',
+    		'text' => "Bienvenido/a" . $nombre . "!"
+    		]);
+			 http_response_code(200);
+	} */
 	
 	
 		
