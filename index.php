@@ -140,7 +140,7 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 				'text' => "asdas"
      			]);
 				http_response_code(200);
-    }else if(substr($update->message->text, 0,21) === "¡Comencemos una buena"){
+    }else if(substr($update->message->text, 0,2) === "/a"){
 		$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'HTML',
