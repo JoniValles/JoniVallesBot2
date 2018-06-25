@@ -153,7 +153,7 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Para añadir tu codigo de amigo a la lista usa el comando /addamigo CODIGO"
+    		'text' => "Para "
     		]);
 			http_response_code(200);
     }
