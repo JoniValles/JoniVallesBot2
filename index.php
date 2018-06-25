@@ -20,6 +20,7 @@ require 'vendor/autoload.php';
 $client = new Zelenin\Telegram\Bot\Api('269022555:AAFOpX8kGgLbgYK5Gyh_ek2gpfj6WJWxIpw'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
+$command = utf8_decode($update->message->text);
  
 //your app
 try {
@@ -140,7 +141,7 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 				'text' => "asdas"
      			]);
 				http_response_code(200);
-    }else if(substr($update->message->text, 0, 21) === "¡Comencemos una buena"){
+    }else if(substr($command, 0, 21) === "¡Comencemos una buena"){
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 	$data = utf8_encode("Para añadir tu codigo de amigo a la lista usa el comando: \n/addamigo CODIGO");
