@@ -143,10 +143,10 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
     }else if(substr($update->message->text, 0, 2) === "/a"){
 			//http_response_code(200);
     	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
+	$data = urlencode("Para añadir tu codigo de amigo a la lista usa el comando /addamigo CODIGO");
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Para añadir tu codigo de amigo a la lista usa el comando /addamigo CODIGO"
+    		'text' => $data
     		]);
 			http_response_code(200);
     }
