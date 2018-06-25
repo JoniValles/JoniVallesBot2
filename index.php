@@ -140,7 +140,14 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 				'text' => "asdas"
      			]);
 				http_response_code(200);
-    }
+    }else if(substr($update->message->text, 0,21) === "¡Comencemos una buena"){
+		$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
+    		'text' => "Para añadir tu codigo de amigo a la lista usa el comando /addamigo CODIGO"
+    		]);
+			 http_response_code(200);
+	}
 	
 	
 	
