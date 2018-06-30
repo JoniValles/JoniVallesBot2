@@ -902,193 +902,6 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	
 	
-	else if(substr($update->message->text, 0, 8) === "/ofrezco")
-    {
-		//http_response_code(200);
-		
-		
-		 //connecting to database and getting the connection object
-//database constants
- define('DB_HOST', 'den1.mysql2.gear.host');
- define('DB_USER', 'pmgmisiones');
- define('DB_PASS', "Mw78_Gz8-CJs");
- define('DB_NAME', 'PMGMisiones');
- 
- //connecting to database and getting the connection object
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-$conn->set_charset("utf8");
- if (mysqli_connect_errno()) {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => ERROR
-    		]);
- die();
- http_response_code(200);
- }
- 
- 
- $trainer = explode(" ", $update->message->text);
- $pokestop = explode(' ', $update->message->text);
- $data = $trainer;
- unset($data[0]);
- unset($data[1]);
- $finalData = implode(" ", $data);
- $nombre = $update->message->from->username;
- 
- $query = "update intercambios set Ofrece = '$trainer[1]' where Nombre = '$nombre'";
- //executing the query 
- mysqli_query($conn, $query) or die('Error querying database.');
-//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Intercambios confirmados!"
-    		]);
-			 http_response_code(200);
-	}
-	
-	
-	
-	
-	else if(substr($update->message->text, 0, 6) === "/busco")
-    {
-		//http_response_code(200);
-		
-		
-		 //connecting to database and getting the connection object
-//database constants
- define('DB_HOST', 'den1.mysql2.gear.host');
- define('DB_USER', 'pmgmisiones');
- define('DB_PASS', "Mw78_Gz8-CJs");
- define('DB_NAME', 'PMGMisiones');
- 
- //connecting to database and getting the connection object
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-$conn->set_charset("utf8");
- if (mysqli_connect_errno()) {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => ERROR
-    		]);
- die();
- http_response_code(200);
- }
- 
- 
- $trainer = explode(" ", $update->message->text);
- $pokestop = explode(' ', $update->message->text);
- $data = $trainer;
- unset($data[0]);
- unset($data[1]);
- $finalData = implode(" ", $data);
- $nombre = $update->message->from->username;
- 
- $query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
- //executing the query 
- mysqli_query($conn, $query) or die('Error querying database.');
-//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "\xF0\x9F\x91\x8D"
-    		]);
-			 http_response_code(200);
-	}
-	
-	
-	
-	else if(substr($update->message->text, 0, 13) === "/intercambios")
-    {
-		//http_response_code(200);
-		
-		 //connecting to database and getting the connection object
-//database constants
- define('DB_HOST', 'den1.mysql2.gear.host');
- define('DB_USER', 'pmgmisiones');
- define('DB_PASS', "Mw78_Gz8-CJs");
- define('DB_NAME', 'PMGMisiones');
- 
- //connecting to database and getting the connection object
- $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-$conn->set_charset("utf8");
- if (mysqli_connect_errno()) {
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
- //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => ERROR
-    		]);
- die();
- http_response_code(200);
- }
- 
- 
- $trainer = explode(" ", $update->message->text);
- $query = "select * from intercambios;";
- //executing the query 
- mysqli_query($conn, $query) or die('Error querying database.');
- $result = mysqli_query($conn, $query);
- $row = mysqli_fetch_array($result);
- $data = "";
- 
-if (mysqli_num_rows($result)==0) { 
-$data = "Todavia no se han añadido nidos";
-http_response_code(200);
- }else{
-	 
- 
-while ($row = mysqli_fetch_array($result)) {
-			$data = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
-
-    }
- }
-	
-	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'Markdown',
-    		'text' => $data
-    		]);
-			 http_response_code(200);
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -1334,6 +1147,187 @@ while ($row = mysqli_fetch_array($result)) {
     		]);
 			 http_response_code(200);
 	}
+	} ###FIN AVILES#####
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	##TODO####
+	
+	
+	
+	###########################################################
+	###########################################################
+	#################INTERCAMBIOS##############################
+	###########################################################
+	###########################################################
+	
+	
+	else if(substr($update->message->text, 0, 8) === "/ofrezco")
+    {
+		//http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ $nombre = $update->message->from->username;
+ 
+ $query = "update intercambios set Ofrece = '$trainer[1]' where Nombre = '$nombre'";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "\xF0\x9F\x91\x8D"
+    		]);
+			 http_response_code(200);
+	}
+	
+	
+	
+	
+	else if(substr($update->message->text, 0, 6) === "/busco")
+    {
+		//http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ $nombre = $update->message->from->username;
+
+ 
+ $query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "\xF0\x9F\x91\x8D"
+    		]);
+			 http_response_code(200);
+	}
+	
+	
+	
+	else if(substr($update->message->text, 0, 13) === "/intercambios")
+    {
+		//http_response_code(200);
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from intercambios;";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $data = "";
+ 
+if (mysqli_num_rows($result)==0) { 
+$data = "Todavia no se han añadido nidos";
+http_response_code(200);
+ }else{
+	 
+ 
+while ($row = mysqli_fetch_array($result)) {
+			$data = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
+
+    }
+ }
+	
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'Markdown',
+    		'text' => $data
+    		]);
+			 http_response_code(200);
 	}
 	
 	
