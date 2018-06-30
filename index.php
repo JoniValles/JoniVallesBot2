@@ -201,7 +201,7 @@ $conn->set_charset("utf8");
  $finalData = implode(" ", $data);
  $nombre = $update->message->from->username;
  
- $query = "update intercambios set Ofrece = '$trainer[1]' where Nombre = '$nombre'";
+ $query = "update intercambios set Ofrece = '$finalData' where Nombre = '$nombre'";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -256,7 +256,7 @@ $conn->set_charset("utf8");
  
  //$query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
  $query = "INSERT INTO intercambios (Nombre,Busca)
-SELECT * FROM (SELECT '$nombre','$ofrece') AS tmp
+SELECT * FROM (SELECT '$nombre','$finalData') AS tmp
 WHERE NOT EXISTS (
     SELECT Nombre FROM intercambios WHERE nombre = '$nombre'
 ) LIMIT 1;";
