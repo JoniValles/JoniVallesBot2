@@ -257,7 +257,7 @@ $conn->set_charset("utf8");
  $query = "INSERT INTO intercambios (Nombre,Busca)
 SELECT * FROM (SELECT '$nombre','$trainer[1]') AS tmp
 WHERE NOT EXISTS (
-    SELECT Nombre FROM intercambios WHERE nombre = 'a'
+    SELECT Nombre FROM intercambios WHERE nombre = '$nombre'
 ) LIMIT 1;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
