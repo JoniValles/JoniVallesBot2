@@ -258,7 +258,7 @@ $conn->set_charset("utf8");
 SELECT * FROM (SELECT '$nombre','$trainer[1]') AS tmp
 WHERE NOT EXISTS (
     SELECT Nombre FROM intercambios WHERE nombre = 'a'
-) LIMIT 1;"
+) LIMIT 1;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
