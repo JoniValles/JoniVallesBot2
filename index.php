@@ -255,7 +255,7 @@ $conn->set_charset("utf8");
  
  //$query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
  $query = "INSERT INTO intercambios (Nombre,Busca)
-SELECT * FROM (SELECT '$nombre','$trainer[1]') AS tmp
+SELECT * FROM (SELECT '$nombre','$trainer') AS tmp
 WHERE NOT EXISTS (
     SELECT Nombre FROM intercambios WHERE nombre = '$nombre'
 ) LIMIT 1;";
