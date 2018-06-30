@@ -329,6 +329,56 @@ while ($row = mysqli_fetch_array($result)) {
 			 http_response_code(200);
 	}
 	
+	else if(substr($command, 0, 23) === "Borrar mis intercambios"){
+			
+		//http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ $nombre = $update->message->from->username;
+
+ 
+ //$query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
+ $query = "delete from intercambios where Nombre = '$nombre'";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Tus intercambios han sido borrados"
+    		]);
+			 http_response_code(200);
+    }
+	
 	
 	
 	
