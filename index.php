@@ -1045,7 +1045,7 @@ http_response_code(200);
 	 
  
 while ($row = mysqli_fetch_array($result)) {
-			$data = $data . "*".$row['Nombre']."* - Busca: ". $row['Busca']. "- Ofrece: "."\n";
+			$data = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
 
     }
  }
