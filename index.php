@@ -996,7 +996,7 @@ $conn->set_charset("utf8");
 
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Intercambios confirmados!"
+    		'text' => "\xF0\x9F\x91\x8D"
     		]);
 			 http_response_code(200);
 	}
