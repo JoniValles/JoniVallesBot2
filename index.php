@@ -251,11 +251,12 @@ $conn->set_charset("utf8");
  unset($data[1]);
  $finalData = implode(" ", $data);
  $nombre = $update->message->from->username;
+ $ofrece = $trainer . $finalData;
 
  
  //$query = "insert into intercambios (Nombre,Busca) values ('$nombre','$trainer[1]')";
  $query = "INSERT INTO intercambios (Nombre,Busca)
-SELECT * FROM (SELECT '$nombre','$trainer') AS tmp
+SELECT * FROM (SELECT '$nombre','$ofrece') AS tmp
 WHERE NOT EXISTS (
     SELECT Nombre FROM intercambios WHERE nombre = '$nombre'
 ) LIMIT 1;";
