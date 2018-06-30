@@ -938,7 +938,7 @@ $conn->set_charset("utf8");
  $finalData = implode(" ", $data);
  $nombre = $update->message->from->username;
  
- $query = "update intercambios set Busca = '$trainer[1]' where Nombre = '$nombre'";
+ $query = "update intercambios set Ofrece = '$trainer[1]' where Nombre = '$nombre'";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
