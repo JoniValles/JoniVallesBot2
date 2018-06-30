@@ -197,7 +197,7 @@ $conn->set_charset("utf8");
  $pokestop = explode(' ', $update->message->text);
  $data = $trainer;
  unset($data[0]);
- unset($data[1]);
+ //unset($data[1]);
  $finalData = implode(" ", $data);
  $nombre = $update->message->from->username;
  
@@ -248,7 +248,7 @@ $conn->set_charset("utf8");
  $pokestop = explode(' ', $update->message->text);
  $data = $trainer;
  unset($data[0]);
- unset($data[1]);
+ //unset($data[1]);
  $finalData = implode(" ", $data);
  $nombre = $update->message->from->username;
  $ofrece = $data . $finalData;
