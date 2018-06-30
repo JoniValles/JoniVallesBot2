@@ -936,7 +936,7 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
- $nombre = $update->message->username;
+ $nombre = "a";
  
  $query = "insert into intercambios (Nombre,Ofrece) values ($nombre,'$trainer[1]')";
  //executing the query 
