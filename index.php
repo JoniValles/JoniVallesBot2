@@ -1162,7 +1162,6 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
- if($trainer[0] != null){
  
  $query = "insert into amigo (Nombre,Codigo) values ('$trainer[1]','$finalData')";
  //executing the query 
@@ -1174,15 +1173,6 @@ $conn->set_charset("utf8");
     		'text' => "Codigo de amigo confirmado!"
     		]);
 			 http_response_code(200);
-	}
-	else{
-		$data = utf8_encode("Para añadir tu codigo de amigo a la lista usa el comando: \n/addamigo NOMBRE CODIGO\nY si no querias añadir ningún código no seas un manazas y le des al comando.");
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => $data
-    		]);
-			http_response_code(200);
-	}
 	}
 	
 	
