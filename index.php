@@ -206,7 +206,7 @@ $conn->set_charset("utf8");
 	
 	
 	
-	else if(substr($update->message->text, 0, 12) === "/listaamigos" || (substr($update->message->text, 0, 12) === "/listaamigos"))
+	else if(substr($update->message->text, 0, 12) === "/listaamigos" || (substr($update->message->text, 0, 7) === "/amigos"))
     {
 		//http_response_code(200);
 		
