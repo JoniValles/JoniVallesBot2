@@ -1175,6 +1175,16 @@ $conn->set_charset("utf8");
 			 http_response_code(200);
 	}
 	
+	else if($update->message->text, 0, 9 === "/addamigo")
+    {
+		$data = utf8_encode("Para añadir tu codigo de amigo a la lista usa el comando: \n/addamigo NOMBRE CODIGO\nY si no querías añadir ningún código no seas un manazas y pulses el comando.");
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $data
+    		]);
+			http_response_code(200);
+	}
+	
 	
 	
 	else if(substr($update->message->text, 0, 7) === "/amigos")
