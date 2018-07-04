@@ -1162,7 +1162,7 @@ $conn->set_charset("utf8");
  unset($data[0]);
  unset($data[1]);
  $finalData = implode(" ", $data);
- if($trainer != null){
+ if($trainer[0] != null){
  
  $query = "insert into amigo (Nombre,Codigo) values ('$trainer[1]','$finalData')";
  //executing the query 
