@@ -192,7 +192,7 @@ $conn->set_charset("utf8");
  unset($data[1]);
  $finalData = implode(" ", $data);
  
- $query = "insert into amigoasturias (Nombre,Codigo) values ('$trainer[1]','$finalData')";
+ $query = "insert into amigo (Nombre,Codigo) values ('$trainer[1]','$finalData')";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
 //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -234,7 +234,7 @@ $conn->set_charset("utf8");
  
  
  $trainer = explode(" ", $update->message->text);
- $query = "select * from amigoasturias;";
+ $query = "select * from amigo;";
  //executing the query 
  mysqli_query($conn, $query) or die('Error querying database.');
  $result = mysqli_query($conn, $query);
