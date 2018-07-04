@@ -157,6 +157,113 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 	##TODO####
 	
 	
+	else if(substr($update->message->text, 0, 6) === "/amigo")
+    {
+		//http_response_code(200);
+		
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $pokestop = explode(' ', $update->message->text);
+ $data = $trainer;
+ unset($data[0]);
+ unset($data[1]);
+ $finalData = implode(" ", $data);
+ 
+ $query = "insert into amigoasturias (Nombre,Codigo) values ('$trainer[1]','$finalData')";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => "Codigo de amigo confirmado!"
+    		]);
+			 http_response_code(200);
+	}
+	
+	
+	
+	else if(substr($update->message->text, 0, 12) === "/listaamigos")
+    {
+		//http_response_code(200);
+		
+		 //connecting to database and getting the connection object
+//database constants
+ define('DB_HOST', 'den1.mysql2.gear.host');
+ define('DB_USER', 'pmgmisiones');
+ define('DB_PASS', "Mw78_Gz8-CJs");
+ define('DB_NAME', 'PMGMisiones');
+ 
+ //connecting to database and getting the connection object
+ $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn->set_charset("utf8");
+ if (mysqli_connect_errno()) {
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ //$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => ERROR
+    		]);
+ die();
+ http_response_code(200);
+ }
+ 
+ 
+ $trainer = explode(" ", $update->message->text);
+ $query = "select * from amigoasturias;";
+ //executing the query 
+ mysqli_query($conn, $query) or die('Error querying database.');
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $data = "";
+ 
+if (mysqli_num_rows($result)==0) { 
+$data = "Todavia no se han añadido nidos";
+http_response_code(200);
+ }else{
+	 
+ 
+while ($row = mysqli_fetch_array($result)) {
+			$data = $data . "*".$row['Nombre']."* - `". $row['Codigo']."`"."\n";
+
+    }
+ }
+	
+	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'Markdown',
+    		'text' => $data
+    		]);
+			 http_response_code(200);
+	}
+	
+	
 	
 	###########################################################
 	###########################################################
@@ -1143,7 +1250,7 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	#####GIJON#####
 	
-	else if($update->message->chat->id === -1001389004192 || $update->message->chat->id === -1001063849412  ){
+	else if($update->message->chat->id === -1001389004192){
 		
 		
 		if(substr($update->message->text, 0, 9) === "/addamigo")
