@@ -263,7 +263,7 @@ while ($row = mysqli_fetch_array($result)) {
 			 http_response_code(200);
 	}
 	
-	else if(substr($update->message->text, 0, 18) === "/listaamigosaviles" )
+	else if(substr($update->message->text, 0, 13) === "/amigosaviles" )
     {
 		//http_response_code(200);
 		
