@@ -156,7 +156,7 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
 	
 	##TODO####
 	
-	
+	/*
 	else if(substr($update->message->text, 0, 6) === "/amigo")
     {
 		//http_response_code(200);
@@ -318,7 +318,7 @@ while ($row = mysqli_fetch_array($result)) {
     		'text' => $data
     		]);
 			 http_response_code(200);
-	}
+	} */
 	
 	
 	
