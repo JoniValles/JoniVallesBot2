@@ -150,6 +150,17 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
     		'text' => $data
     		]);
 			http_response_code(200);
+    }else if($update->message->text == "/ofrezco@PoGoMapGijonBot"){
+			//http_response_code(200);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	$data = utf8_encode("Estate quieto ");
+	 $nombre = $update->message->from->username;
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $data . $nombre
+    		]);
+			http_response_code(200);
     }
 	
 	
