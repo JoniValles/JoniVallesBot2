@@ -510,7 +510,7 @@ while ($row = mysqli_fetch_array($result)) {
 			 $response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'Markdown',
-    		'text' => $data . $data2 ."a"
+    		'text' => $data2
     		]);
 			 http_response_code(200);
 	}
