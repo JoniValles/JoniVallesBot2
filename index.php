@@ -492,6 +492,14 @@ http_response_code(200);
 while ($row = mysqli_fetch_array($result)) {
 	if(strlen($data) < 4300){
 			$data = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
+	}else{
+		
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'Markdown',
+    		'text' => $data
+    		]);
+			 http_response_code(200);
 	}
 				$data2 = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
 
@@ -500,12 +508,6 @@ while ($row = mysqli_fetch_array($result)) {
 	
 	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'Markdown',
-    		'text' => $data
-    		]);
-			 http_response_code(200);
 			 
 			 $response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
