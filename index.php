@@ -498,10 +498,8 @@ while ($row = mysqli_fetch_array($result)) {
     		'chat_id' => $update->message->chat->id,
 			'parse_mode' => 'Markdown',
     		'text' => $data
-    		]);
-			
-			
-			$data2 = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
+    		]);		
+			$data = "";
 			 http_response_code(200);
 			 
 			 
@@ -511,16 +509,7 @@ while ($row = mysqli_fetch_array($result)) {
 
     }
  }
-	
-	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
 
-			 
-			 $response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'Markdown',
-    		'text' => $data2
-    		]);
-			 http_response_code(200);
 	}
 	
 	else if(substr($command, 0, 23) === "Borrar mis intercambios"){
