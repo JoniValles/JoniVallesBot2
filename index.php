@@ -499,9 +499,15 @@ while ($row = mysqli_fetch_array($result)) {
 			'parse_mode' => 'Markdown',
     		'text' => $data
     		]);
+			
+			
+			$data2 = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
 			 http_response_code(200);
+			 
+			 
+			 
 	}
-				$data2 = $data . "*@".$row['Nombre']."* - *Busca:* ". $row['Busca']. " - *Ofrece:* ".$row['Ofrece']."\n";
+				
 
     }
  }
