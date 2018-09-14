@@ -447,7 +447,7 @@ WHERE NOT EXISTS (
 	}
 	
 	
-	
+	/*
 	else if(substr($update->message->text, 0, 13) === "/intercambios")
     {
 		//http_response_code(200);
@@ -510,7 +510,26 @@ while ($row = mysqli_fetch_array($result)) {
     }
  }
 
+	}*/
+	
+	
+	else if(substr($update->message->text, 0, 13) === "/intercambios")
+    {
+	
+		
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+			'parse_mode' => 'HTML',
+    		'text' =>  <a href="https://profesorjoni.000webhostapp.com/intercambios.php">Intercambios</a>
+    		]);		
+			$data = "";
+			 http_response_code(200);
+			 
+			 
+			 
 	}
+				
+
 	
 	else if(substr($command, 0, 23) === "Borrar mis intercambios"){
 			
