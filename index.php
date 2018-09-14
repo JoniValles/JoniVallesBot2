@@ -519,8 +519,8 @@ while ($row = mysqli_fetch_array($result)) {
 		
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-			'parse_mode' => 'HTML',
-    		'text' =>  <a href="https://profesorjoni.000webhostapp.com/intercambios.php">Intercambios</a>
+			'parse_mode' => 'Markdown',
+    		'text' => "[Intercambios](https://profesorjoni.000webhostapp.com/intercambios.php)"
     		]);		
 			$data = "";
 			 http_response_code(200);
