@@ -161,6 +161,17 @@ $array = array("Picky dimision!!","Picky dimision!!","Picky dimision!!", "Xavi d
     		'text' => $data . $nombre
     		]);
 			http_response_code(200);
+    }else if(substr($update->message->text, 0, 9) === "Quien soy"){
+			//http_response_code(200);
+    	//$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+	$data = utf8_encode("¿Tienes una crisis de identidad ");
+	 $nombre = $update->message->from->username;
+
+    	$response = $client->sendMessage([
+    		'chat_id' => $update->message->chat->id,
+    		'text' => $data . $nombre . " ?"
+    		]);
+			http_response_code(200);
     }
 	
 	
